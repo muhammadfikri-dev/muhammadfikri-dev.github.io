@@ -19,3 +19,9 @@ Website: [https://muhammadfikri-dev.github.io/](https://muhammadfikri-dev.github
 - **Pencarian Cepat & Filter Multi-Kategori:** Render instan berbasis client-side JavaScript.
 - **Dukungan Logo Resmi Teknologi & Bahasa Pemrograman:** Menggunakan icon vektor Devicon dan Lucide Icons.
 - **Dukungan Mode Tampilan Gelap & Terang.**
+
+---
+
+<p align="center">
+  Dibuat dengan ❤️ oleh <b>Muhammad Fikri Dev</b>
+</p>

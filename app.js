@@ -1,6 +1,5 @@
 // Portfolio App Logic for Muhammad Fikri
 document.addEventListener('DOMContentLoaded', () => {
-    // Check Lucide
     if (window.lucide) {
         lucide.createIcons();
     }
@@ -67,34 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!featuredGrid) return;
 
         featuredGrid.innerHTML = featuredRepos.slice(0, 6).map(r => `
-            <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group">
+            <div class="glass-card rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between group">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-3">
                         <span class="px-2.5 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs font-mono font-semibold">
-                            ${r.featuredBadge || '🏆 Flagship'}
+                            ${r.featuredBadge || 'Sistem Utama'}
                         </span>
-                        <span class="px-2 py-0.5 rounded text-[11px] font-mono ${getLangClass(r.language)}">
-                            ${r.language}
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 text-xs font-mono border border-slate-800 text-slate-300">
+                            <img src="${r.languageIcon}" alt="${r.language}" class="w-3.5 h-3.5 object-contain">
+                            <span>${r.language}</span>
                         </span>
                     </div>
-                    <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors mb-2">
+                    <h3 class="text-lg font-bold text-white group-hover:text-teal-400 transition-colors mb-2">
                         <a href="${r.url}" target="_blank" rel="noopener noreferrer">${r.name}</a>
                     </h3>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
                         ${r.featuredHighlight || r.description}
                     </p>
                 </div>
                 <div>
-                    <div class="flex flex-wrap gap-1.5 mb-5">
+                    <div class="flex flex-wrap gap-1 mb-4">
                         ${(r.topics || []).slice(0, 4).map(t => `
-                            <span class="px-2 py-0.5 rounded-md bg-slate-900/80 text-slate-400 text-xs font-mono border border-slate-800">#${t}</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs font-mono border border-slate-800">#${t}</span>
                         `).join('')}
                     </div>
-                    <div class="flex items-center gap-2 pt-4 border-t border-slate-800/80">
-                        <a href="${r.url}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-3 rounded-xl bg-teal-500/20 hover:bg-teal-500 text-teal-300 hover:text-slate-950 font-semibold text-xs text-center border border-teal-500/30 transition-all">
-                            Buka di GitHub
+                    <div class="flex items-center gap-2 pt-3 border-t border-slate-800">
+                        <a href="${r.url}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-3 rounded-xl bg-teal-500/20 hover:bg-teal-500 text-teal-300 hover:text-slate-950 font-semibold text-xs text-center border border-teal-500/30 transition-all flex items-center justify-center gap-1.5">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            <span>Buka Repositori</span>
                         </a>
-                        <button onclick="copyCloneUrl('${r.clone_url}')" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 hover:border-teal-500/40 text-xs transition-all" title="Salin git clone">
+                        <button onclick="copyCloneUrl('${r.clone_url}')" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 hover:border-teal-500/40 text-xs transition-all" title="Salin Perintah Git Clone">
                             <i data-lucide="copy" class="w-4 h-4"></i>
                         </button>
                     </div>
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // --- 3. Render Category Pills ---
+    // --- 3. Render Category Pills with Real Lucide Icons ---
     function renderCategoryPills() {
         if (!categoryPillsContainer) return;
         const categories = data.categories || [];
@@ -111,17 +112,19 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryPillsContainer.innerHTML = categories.map(cat => {
             const isActive = cat.id === activeCategory;
             return `
-                <button data-category="${cat.id}" class="category-pill px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                <button data-category="${cat.id}" class="category-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
                     isActive 
                     ? 'bg-teal-500 text-slate-950 font-bold shadow-md shadow-teal-500/20' 
-                    : 'bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700'
+                    : 'bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700'
                 }">
-                    ${cat.name} <span class="ml-1 opacity-70 font-mono">(${cat.count})</span>
+                    <i data-lucide="${cat.lucide || 'layers'}" class="w-3.5 h-3.5 ${isActive ? 'text-slate-950' : 'text-teal-400'}"></i>
+                    <span>${cat.name}</span>
+                    <span class="ml-0.5 opacity-70 font-mono text-[11px]">(${cat.count})</span>
                 </button>
             `;
         }).join('');
 
-        // Attach listeners
+        // Attach event listeners
         document.querySelectorAll('.category-pill').forEach(btn => {
             btn.addEventListener('click', () => {
                 activeCategory = btn.dataset.category;
@@ -130,22 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 filterAndRenderRepos();
             });
         });
+
+        if (window.lucide) lucide.createIcons();
     }
 
-    // --- 4. Filtering & Sorting Repositories ---
+    // --- 4. Filter & Sort Repositories ---
     function filterAndRenderRepos() {
         let filtered = allRepos.filter(r => {
-            // Category Filter
+            // Category
             if (activeCategory === 'featured' && !r.isFeatured) return false;
             if (activeCategory !== 'all' && activeCategory !== 'featured' && r.categoryId !== activeCategory) return false;
 
-            // Language Filter
+            // Language
             if (selectedLanguage !== 'all') {
-                if (selectedLanguage === 'C++' && !r.language.includes('C++')) return false;
-                else if (selectedLanguage !== 'C++' && r.language !== selectedLanguage) return false;
+                if (r.languageKey !== selectedLanguage && r.language !== selectedLanguage) return false;
             }
 
-            // Search Query Filter
+            // Search query
             if (searchQuery.trim()) {
                 const q = searchQuery.toLowerCase();
                 const matchName = r.name.toLowerCase().includes(q);
@@ -169,35 +173,30 @@ document.addEventListener('DOMContentLoaded', () => {
             filtered.sort((a, b) => (b.pushedAt || '').localeCompare(a.pushedAt || ''));
         }
 
-        // Update count
         resultsCount.textContent = filtered.length;
 
-        // Render Slice
         const visibleRepos = filtered.slice(0, displayedCount);
         renderRepoCards(visibleRepos);
 
-        // Load More button visibility
         if (displayedCount >= filtered.length) {
             loadMoreContainer.classList.add('hidden');
         } else {
             loadMoreContainer.classList.remove('hidden');
         }
 
-        if (window.lucide) {
-            lucide.createIcons();
-        }
+        if (window.lucide) lucide.createIcons();
     }
 
-    // --- 5. Render Cards ---
+    // --- 5. Render Cards Grid ---
     function renderRepoCards(repos) {
         if (!reposGrid) return;
         
         if (repos.length === 0) {
             reposGrid.innerHTML = `
-                <div class="col-span-full py-16 text-center text-slate-400 glass-panel rounded-2xl border border-slate-800">
-                    <i data-lucide="search-x" class="w-12 h-12 mx-auto text-slate-500 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white">Tidak ada repositori yang cocok</h3>
-                    <p class="text-xs text-slate-400 mt-1">Coba sesuaikan kata kunci pencarian atau ganti filter kategori.</p>
+                <div class="col-span-full py-14 text-center text-slate-400 glass-panel rounded-2xl border border-slate-800">
+                    <i data-lucide="search-x" class="w-10 h-10 mx-auto text-slate-500 mb-2.5"></i>
+                    <h3 class="text-base font-bold text-white">Tidak ada repositori yang sesuai</h3>
+                    <p class="text-xs text-slate-400 mt-1">Coba sesuaikan kata kunci pencarian atau pilih filter kategori lainnya.</p>
                 </div>
             `;
             return;
@@ -206,19 +205,20 @@ document.addEventListener('DOMContentLoaded', () => {
         reposGrid.innerHTML = repos.map(r => `
             <div class="glass-card rounded-2xl p-5 border border-slate-800/90 flex flex-col justify-between group">
                 <div>
-                    <!-- Top Category & Lang -->
+                    <!-- Top Category & Language SVG -->
                     <div class="flex items-center justify-between gap-2 mb-3">
                         <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full ${r.isFeatured ? 'bg-amber-400' : 'bg-teal-400'}"></span>
-                            ${r.categoryName}
+                            <i data-lucide="${r.categoryLucide || 'cpu'}" class="w-3.5 h-3.5 text-teal-400"></i>
+                            <span>${r.categoryName}</span>
                         </span>
-                        <span class="px-2 py-0.5 rounded text-[11px] font-mono ${getLangClass(r.language)}">
-                            ${r.language}
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300">
+                            <img src="${r.languageIcon}" alt="${r.language}" class="w-3 h-3 object-contain">
+                            <span>${r.language}</span>
                         </span>
                     </div>
 
                     <!-- Title -->
-                    <h3 class="text-base font-bold text-white group-hover:text-teal-400 transition-colors mb-2 line-clamp-1" title="${r.name}">
+                    <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-teal-400 transition-colors mb-2 line-clamp-1" title="${r.name}">
                         <a href="${r.url}" target="_blank" rel="noopener noreferrer">${r.name}</a>
                     </h3>
 
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <div>
                     <!-- Topics Tags -->
-                    <div class="flex flex-wrap gap-1 mb-4 h-6 overflow-hidden">
+                    <div class="flex flex-wrap gap-1 mb-3.5 h-5 overflow-hidden">
                         ${(r.topics || []).slice(0, 3).map(t => `
                             <span class="px-1.5 py-0.5 rounded bg-slate-900 text-slate-400 text-[10px] font-mono border border-slate-800">#${t}</span>
                         `).join('')}
@@ -238,15 +238,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <!-- Footer Actions -->
                     <div class="flex items-center gap-2 pt-3 border-t border-slate-800/80">
-                        <button onclick="openModal('${r.name}')" class="flex-1 py-1.5 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700 hover:border-teal-500/40 transition-all flex items-center justify-center gap-1">
-                            <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                        <button onclick="openModal('${r.name}')" class="flex-1 py-1.5 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700 hover:border-teal-500/40 transition-all flex items-center justify-center gap-1.5">
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-teal-400"></i>
                             <span>Detail</span>
                         </button>
                         <a href="${r.url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-slate-900 hover:bg-teal-500/20 text-slate-300 hover:text-teal-300 border border-slate-700 transition-all" title="Buka di GitHub">
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
                         <button onclick="copyCloneUrl('${r.clone_url}')" class="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 hover:border-teal-500/40 transition-all" title="Salin git clone">
-                            <i data-lucide="copy" class="w-4 h-4"></i>
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                         </button>
                     </div>
                 </div>
@@ -254,19 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // --- Helper: Language Class ---
-    function getLangClass(lang) {
-        if (!lang) return 'bg-slate-800 text-slate-400';
-        if (lang.includes('C++')) return 'lang-badge-cpp';
-        if (lang.includes('Python')) return 'lang-badge-python';
-        if (lang.includes('Shell')) return 'lang-badge-shell';
-        if (lang.includes('C')) return 'lang-badge-c';
-        if (lang.includes('PowerShell')) return 'lang-badge-powershell';
-        if (lang.includes('JavaScript')) return 'lang-badge-javascript';
-        return 'lang-badge-docker';
-    }
-
-    // --- 6. Event Listeners for Filters ---
+    // --- 6. Event Listeners ---
     searchInput.addEventListener('input', (e) => {
         searchQuery = e.target.value;
         if (searchQuery.trim()) {
@@ -301,30 +289,32 @@ document.addEventListener('DOMContentLoaded', () => {
         filterAndRenderRepos();
     });
 
-    // --- 7. Modal System ---
+    // --- 7. Modal System with Tabbed Specifications ---
     window.openModal = function(repoName) {
         const repo = allRepos.find(r => r.name === repoName);
         if (!repo) return;
 
         modalContent.innerHTML = `
-            <div class="space-y-5">
+            <div class="space-y-4">
                 <div class="flex items-center gap-2">
-                    <span class="px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs font-mono font-semibold">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs font-mono font-semibold">
+                        <i data-lucide="${repo.categoryLucide || 'cpu'}" class="w-3.5 h-3.5"></i>
                         ${repo.categoryName}
                     </span>
-                    <span class="px-2.5 py-0.5 rounded text-xs font-mono ${getLangClass(repo.language)}">
-                        ${repo.language}
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">
+                        <img src="${repo.languageIcon}" alt="${repo.language}" class="w-3.5 h-3.5 object-contain">
+                        <span>${repo.language}</span>
                     </span>
                 </div>
                 
-                <h3 class="text-2xl font-bold text-white">${repo.name}</h3>
+                <h3 class="text-xl font-bold text-white">${repo.name}</h3>
                 
-                <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-slate-200 leading-relaxed">
+                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-slate-200 leading-relaxed">
                     ${repo.description}
                 </div>
 
                 <div>
-                    <div class="text-xs uppercase font-mono text-slate-400 mb-2">Topik & Kata Kunci:</div>
+                    <div class="text-xs uppercase font-mono text-slate-400 mb-2">Topik & Spesifikasi Protokol:</div>
                     <div class="flex flex-wrap gap-1.5">
                         ${(repo.topics || []).map(t => `
                             <span class="px-2 py-1 rounded bg-slate-900 text-slate-300 text-xs font-mono border border-slate-800">#${t}</span>
@@ -333,19 +323,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <div>
-                    <div class="text-xs uppercase font-mono text-slate-400 mb-2">Instruksi Git Clone:</div>
+                    <div class="text-xs uppercase font-mono text-slate-400 mb-2">Perintah Kloning Git:</div>
                     <div class="flex items-center gap-2 p-3 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-teal-300">
                         <span class="truncate flex-1">git clone ${repo.clone_url}</span>
-                        <button onclick="copyCloneUrl('${repo.clone_url}')" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded transition-colors" title="Salin perintah">
+                        <button onclick="copyCloneUrl('${repo.clone_url}')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded text-xs transition-colors">
                             Salin
                         </button>
                     </div>
                 </div>
 
                 <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
-                    <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm text-center transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="github" class="w-4 h-4"></i>
-                        <span>Buka Repository di GitHub</span>
+                    <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-2">
+                        <i class="devicon-github-original text-base"></i>
+                        <span>Buka Repositori di GitHub</span>
                     </a>
                 </div>
             </div>
@@ -368,10 +358,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 8. Copy to Clipboard & Toast ---
+    // Keyboard ESC to close modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !repoModal.classList.contains('hidden')) {
+            repoModal.classList.add('hidden');
+            repoModal.classList.remove('flex');
+        }
+    });
+
+    // --- 8. Copy to Clipboard ---
     window.copyCloneUrl = function(url) {
         navigator.clipboard.writeText(`git clone ${url}`).then(() => {
-            showToast('Perintah git clone berhasil disalin ke clipboard!');
+            showToast('Perintah git clone berhasil disalin ke clipboard.');
         }).catch(() => {
             showToast('Gagal menyalin otomatis. Silakan salin manual.');
         });
@@ -382,11 +380,11 @@ document.addEventListener('DOMContentLoaded', () => {
         toast.classList.remove('hidden');
         setTimeout(() => {
             toast.classList.add('hidden');
-        }, 3000);
+        }, 2500);
         if (window.lucide) lucide.createIcons();
     }
 
-    // --- Initial Render ---
+    // Initial render
     renderFeatured();
     renderCategoryPills();
     filterAndRenderRepos();

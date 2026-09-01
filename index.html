@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Fikri | Systems, Embedded IoT & Infrastructure Architect</title>
-    <meta name="description" content="Portofolio Rekayasa Muhammad Fikri - Founder & Lead Engineer di PT. Laksana Digital Industri. Membangun 170+ firmware instrumentasi presisi, arsitektur EV, driver low-level, dan infrastruktur enterprise.">
-    <meta name="keywords" content="Muhammad Fikri, Laksanasoft, ESP32, FreeRTOS, Embedded Systems, IoT, EV, Inverter FOC, BACnet, DALI-2, Arduino, Portofolio, Pelaihari">
+    <title>Muhammad Fikri — Systems & Industrial IoT Architect</title>
+    <meta name="description" content="Portofolio Rekayasa Muhammad Fikri: Firmware Instrumentasi Presisi, Arsitektur Kendaraan Listrik (EV), Driver Windows x64, dan Platform Enterprise.">
+    <meta name="keywords" content="Muhammad Fikri, Laksanasoft, ESP32, FreeRTOS, Embedded Systems, IoT, EV VCU, BACnet, DALI-2, Windows Driver, Pelaihari">
     <meta name="author" content="Muhammad Fikri">
-    
-    <!-- Open Graph / Meta -->
-    <meta property="og:title" content="Muhammad Fikri - Systems & Embedded IoT Architect">
-    <meta property="og:description" content="Portofolio 172+ Repositori Rekayasa Produksi: Embedded IoT, Arsitektur EV, Driver Windows, dan Cloud Enterprise.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Muhammad Fikri — Systems & Industrial IoT Architect">
+    <meta property="og:description" content="Portofolio 172 Repositori Rekayasa Produksi: Embedded Firmware, Arsitektur EV, Driver Low-Level, dan Enterprise Cloud.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://muhammadfikri-dev.github.io/">
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,9 +30,9 @@
                             600: '#0d9488',
                             900: '#134e4a',
                         },
-                        darkbg: '#090d16',
-                        darkcard: '#111827',
-                        darkborder: '#1f293d',
+                        darkbg: '#080c14',
+                        darkcard: '#0f172a',
+                        darkborder: '#1e293b',
                     }
                 }
             }
@@ -40,157 +40,199 @@
     </script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Devicon Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-darkbg text-slate-100 min-h-screen selection:bg-teal-500 selection:text-white transition-colors duration-300">
+<body class="bg-darkbg text-slate-100 min-h-screen selection:bg-teal-500 selection:text-white transition-colors duration-300 antialiased">
 
-    <!-- Ambient Grid & Lighting Background -->
-    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    <!-- Ambient Grid & Hardware Blueprint Background -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0 opacity-40"></div>
     <div class="fixed top-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
     <div class="fixed top-1/3 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
-    <div class="fixed bottom-10 left-1/3 w-[30rem] h-[30rem] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none z-0"></div>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-teal-600 via-cyan-500 to-emerald-400 p-[2px] shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform">
-                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-bold text-lg text-teal-400">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-500 via-cyan-500 to-emerald-500 p-[2px] shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-mono font-bold text-base text-teal-400">
                         MF
                     </div>
                 </div>
                 <div>
-                    <div class="font-bold text-lg text-white group-hover:text-teal-400 transition-colors flex items-center gap-2">
+                    <div class="font-bold text-base text-white group-hover:text-teal-400 transition-colors flex items-center gap-2">
                         Muhammad Fikri
-                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
                     </div>
                     <div class="text-xs text-slate-400 font-mono">PT. Laksana Digital Industri</div>
                 </div>
             </a>
 
-            <!-- Nav Links Desktop -->
-            <nav class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-300">
-                <a href="#featured" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all">Proyek Unggulan</a>
-                <a href="#explorer" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all">Jelajahi 172 Repo</a>
-                <a href="#architecture" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all">Arsitektur & Protokol</a>
-                <a href="#about" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all">Tentang</a>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+                <a href="#featured" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5">
+                    <i data-lucide="star" class="w-4 h-4 text-teal-400"></i>
+                    <span>Proyek Utama</span>
+                </a>
+                <a href="#explorer" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+                    <span>Katalog 172 Repo</span>
+                </a>
+                <a href="#architecture" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5">
+                    <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i>
+                    <span>Arsitektur & Protokol</span>
+                </a>
+                <a href="#contact" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
+                    <span>Kontak</span>
+                </a>
             </nav>
 
             <!-- Actions & Theme Toggle -->
             <div class="flex items-center gap-3">
-                <button id="themeToggle" title="Ganti Tema" class="p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-300 hover:text-teal-400 hover:border-teal-500/40 transition-all">
+                <button id="themeToggle" title="Ganti Mode Tampilan" class="p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-300 hover:text-teal-400 hover:border-teal-500/40 transition-all">
                     <i data-lucide="sun" id="themeIconSun" class="w-5 h-5 hidden"></i>
                     <i data-lucide="moon" id="themeIconMoon" class="w-5 h-5"></i>
                 </button>
-                <a href="https://github.com/muhammadfikri-dev" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 hover:border-teal-500/50 shadow-sm hover:shadow-teal-500/10 transition-all">
-                    <i data-lucide="github" class="w-4 h-4"></i>
-                    <span>GitHub Profile</span>
+                <a href="https://github.com/muhammadfikri-dev" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm border border-slate-700 hover:border-teal-500/50 transition-all">
+                    <i class="devicon-github-original text-base"></i>
+                    <span>GitHub Profil</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="relative z-10">
 
         <!-- Hero Section -->
-        <section class="pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <section class="pt-14 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left Narrative -->
                 <div class="lg:col-span-8 space-y-6">
-                    <!-- Status pill -->
-                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-teal-500/30 bg-teal-950/40 text-teal-300 text-xs sm:text-sm font-mono backdrop-blur-md">
-                        <span class="relative flex h-2.5 w-2.5">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-500"></span>
-                        </span>
-                        <span>Lead Systems Architect & Industrial IoT Specialist</span>
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-teal-500/30 bg-teal-950/40 text-teal-300 text-xs font-mono">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-teal-400"></i>
+                        <span>Systems & Embedded Firmware Engineering</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Rekayasa Sistem Cerdas: <br class="hidden sm:block">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Rekayasa Perangkat Keras, <br class="hidden sm:block">
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400">
-                            Hardware, Firmware, & Enterprise Cloud
+                            Firmware Presisi & Sistem Enterprise
                         </span>
                     </h1>
 
-                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
-                        Portofolio rekayasa mandiri oleh <strong class="text-teal-300 font-semibold">Muhammad Fikri</strong> — Founder & Lead Engineer di <strong class="text-white">PT. Laksana Digital Industri</strong> (Pelaihari). Mengembangkan <strong>172+ solusi produksi</strong> mencakup instrumentasi presisi tinggi, arsitektur kendaraan listrik (EV & VCU), driver Windows low-level, protokol industri (FreeRTOS, BACnet, DALI-2), dan platform enterprise berdaulat data.
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+                        Portofolio teknis oleh <strong class="text-teal-300 font-semibold">Muhammad Fikri</strong> — Lead Systems Architect di <strong class="text-white">PT. Laksana Digital Industri</strong> (Pelaihari, Kalimantan Selatan). Berfokus pada perancangan unit kendali kendaraan listrik (VCU), instrumentasi laboratorium beresolusi tinggi, protokol otomasi industri (FreeRTOS, BACnet MS/TP, DALI-2), driver kernel Windows, dan infrastruktur server enterprise.
                     </p>
 
+                    <!-- Tech Stack Badges with Official Logos -->
+                    <div class="pt-2">
+                        <div class="text-xs uppercase font-mono text-slate-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="terminal" class="w-3.5 h-3.5 text-teal-400"></i>
+                            <span>Bahasa Pemrograman & Lingkungan Utama:</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2.5 items-center">
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-medium text-slate-200">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-4 h-4">
+                                <span>C++ (144 Repo)</span>
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-medium text-slate-200">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-4 h-4">
+                                <span>Python</span>
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-medium text-slate-200">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="w-4 h-4">
+                                <span>C Bare-Metal</span>
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-medium text-slate-200">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="w-4 h-4">
+                                <span>Shell / Bash</span>
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-medium text-slate-200">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" alt="PowerShell" class="w-4 h-4">
+                                <span>PowerShell</span>
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-medium text-slate-200">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-4 h-4">
+                                <span>Docker Stack</span>
+                            </span>
+                        </div>
+                    </div>
+
                     <!-- CTAs -->
-                    <div class="pt-2 flex flex-wrap gap-4 items-center">
-                        <a href="#explorer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-slate-950 font-bold shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transform hover:-translate-y-0.5 transition-all text-sm sm:text-base">
-                            <i data-lucide="layers" class="w-5 h-5"></i>
-                            <span>Jelajahi 172 Proyek</span>
+                    <div class="pt-4 flex flex-wrap gap-4 items-center">
+                        <a href="#explorer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-slate-950 font-bold shadow-lg shadow-teal-500/25 transition-all text-sm">
+                            <i data-lucide="layers" class="w-4 h-4"></i>
+                            <span>Telusuri 172 Repositori</span>
                         </a>
-                        <a href="#featured" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-medium border border-slate-700 hover:border-teal-500/40 shadow-sm transition-all text-sm sm:text-base">
-                            <i data-lucide="sparkles" class="w-5 h-5 text-teal-400"></i>
-                            <span>Proyek Unggulan</span>
+                        <a href="#featured" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white font-medium border border-slate-700 hover:border-teal-500/40 transition-all text-sm">
+                            <i data-lucide="star" class="w-4 h-4 text-teal-400"></i>
+                            <span>Sistem Utama</span>
                         </a>
-                        <a href="mailto:muhammadfikripersonalmail@gmail.com" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-slate-400 hover:text-teal-300 transition-colors text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            <span>Hubungi / Kolaborasi</span>
+                        <a href="mailto:muhammadfikripersonalmail@gmail.com" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-slate-400 hover:text-teal-300 transition-colors text-sm">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>Hubungi / Surel</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Hero Metrics Dashboard Card -->
+                <!-- Right Metrics Panel -->
                 <div class="lg:col-span-4">
-                    <div class="glass-panel rounded-3xl p-6 sm:p-7 border border-slate-700/80 shadow-2xl relative overflow-hidden">
-                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-teal-500/15 rounded-full blur-2xl pointer-events-none"></div>
-                        <div class="flex items-center justify-between pb-5 border-b border-slate-800">
+                    <div class="glass-panel rounded-3xl p-6 sm:p-7 border border-slate-800 shadow-2xl relative overflow-hidden">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
                             <div>
-                                <div class="text-xs uppercase font-mono tracking-wider text-slate-400">Status Portofolio</div>
-                                <div class="text-lg font-bold text-white flex items-center gap-2">
-                                    Engineering Metrics
-                                </div>
+                                <div class="text-xs uppercase font-mono text-slate-400">Ringkasan Audit Teknis</div>
+                                <div class="text-lg font-bold text-white">Metrik Repositori</div>
                             </div>
-                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-semibold">100% Production Ready</span>
+                            <span class="px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs font-mono font-semibold">Siap Produksi</span>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4 my-5">
-                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+                        <div class="grid grid-cols-2 gap-3.5 my-5">
+                            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
                                 <div class="text-3xl font-extrabold text-teal-400 font-mono">172</div>
-                                <div class="text-xs text-slate-400 font-medium mt-1">Total Repositori Produksi</div>
+                                <div class="text-xs text-slate-400 mt-1">Total Repositori</div>
                             </div>
-                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+                            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
                                 <div class="text-3xl font-extrabold text-cyan-400 font-mono">144</div>
-                                <div class="text-xs text-slate-400 font-medium mt-1">C++ / FreeRTOS Firmwares</div>
+                                <div class="text-xs text-slate-400 mt-1">C++ / FreeRTOS</div>
                             </div>
-                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+                            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
                                 <div class="text-3xl font-extrabold text-emerald-400 font-mono">6</div>
-                                <div class="text-xs text-slate-400 font-medium mt-1">Kluster Domain Rekayasa</div>
+                                <div class="text-xs text-slate-400 mt-1">Kluster Rekayasa</div>
                             </div>
-                            <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+                            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
                                 <div class="text-3xl font-extrabold text-amber-400 font-mono">0</div>
-                                <div class="text-xs text-slate-400 font-medium mt-1">Fork (100% Source Asli)</div>
+                                <div class="text-xs text-slate-400 mt-1">Fork (100% Asli)</div>
                             </div>
                         </div>
 
-                        <div class="pt-2 text-xs text-slate-400 flex items-center justify-between border-t border-slate-800">
-                            <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-teal-400"></i> Pelaihari, Kalimantan Selatan</span>
-                            <span class="font-mono text-slate-500">v2026.1</span>
+                        <div class="pt-3 text-xs text-slate-400 flex items-center justify-between border-t border-slate-800">
+                            <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-teal-400"></i> Pelaihari, Indonesia</span>
+                            <span class="font-mono text-slate-500">muhammadfikri-dev</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Flagship Projects (Proyek Unggulan) -->
-        <section id="featured" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/80">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <!-- Featured Projects Section -->
+        <section id="featured" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
                 <div>
                     <div class="inline-flex items-center gap-2 text-teal-400 text-xs font-mono tracking-widest uppercase mb-2">
                         <i data-lucide="award" class="w-4 h-4"></i>
-                        <span>Pilar Teknologi Utama</span>
+                        <span>Sistem Unggulan</span>
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Proyek Unggulan (Flagship Systems)</h2>
-                    <p class="text-slate-400 mt-2 max-w-2xl text-sm sm:text-base">
-                        Sistem berskala besar dan berdaya guna tinggi yang menggabungkan arsitektur hardware, firmware FreeRTOS, driver kustom, dan integrasi enterprise.
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Proyek Pilihan & Arsitektur Utama</h2>
+                    <p class="text-slate-400 mt-2 max-w-2xl text-xs sm:text-sm">
+                        Implementasi terpadu pada unit kendali kendaraan listrik, platform enterprise regulasi Indonesia, driver Windows x64, dan instrumen laboratorium presisi.
                     </p>
                 </div>
-                <a href="#explorer" class="mt-4 md:mt-0 text-sm font-semibold text-teal-400 hover:text-teal-300 flex items-center gap-1 group">
+                <a href="#explorer" class="mt-4 md:mt-0 text-xs sm:text-sm font-semibold text-teal-400 hover:text-teal-300 flex items-center gap-1 group">
                     <span>Lihat Semua 172 Repositori</span>
                     <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
@@ -198,20 +240,20 @@
 
             <!-- Spotlight Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="featuredGrid">
-                <!-- Dynamically populated by app.js -->
+                <!-- Injected via app.js -->
             </div>
         </section>
 
-        <!-- 172 Repository Explorer Section -->
-        <section id="explorer" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/80">
+        <!-- 172 Repositories Explorer -->
+        <section id="explorer" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
             <div class="mb-10 text-center max-w-3xl mx-auto">
                 <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono tracking-widest uppercase mb-2">
                     <i data-lucide="database" class="w-4 h-4"></i>
-                    <span>Eksplorasi Lengkap</span>
+                    <span>Pencarian & Katalog</span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Jelajahi 172 Repositori Rekayasa</h2>
-                <p class="text-slate-400 mt-2 text-sm sm:text-base">
-                    Gunakan filter kategori, bahasa pemrograman, atau pencarian cerdas untuk menelusuri seluruh repositori siap produksi.
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Katalog 172 Repositori Produksi</h2>
+                <p class="text-slate-400 mt-2 text-xs sm:text-sm">
+                    Gunakan filter kategori atau kata kunci (sensor, mikrokontroler, bus komunikasi) untuk menelusuri seluruh repositori.
                 </p>
             </div>
 
@@ -221,38 +263,39 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
                     <!-- Search Input -->
                     <div class="md:col-span-6 relative">
-                        <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-                        <input type="text" id="searchInput" placeholder="Cari nama proyek, sensor, protokol (misal: BACnet, ESP32, LoRa, ERP, Driver)..." 
-                            class="w-full pl-12 pr-10 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 text-sm transition-all">
+                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                        <input type="text" id="searchInput" placeholder="Cari nama proyek, protokol (misal: BACnet, ESP32, FreeRTOS, LoRa, ERP, Driver)..." 
+                            class="w-full pl-11 pr-10 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 text-xs sm:text-sm transition-all">
                         <button id="clearSearchBtn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1">
                             <i data-lucide="x" class="w-4 h-4"></i>
                         </button>
                     </div>
 
-                    <!-- Language Filter Dropdown -->
+                    <!-- Language Filter -->
                     <div class="md:col-span-3">
                         <div class="relative">
-                            <select id="languageSelect" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-200 focus:outline-none focus:border-teal-500 text-sm appearance-none cursor-pointer">
+                            <select id="languageSelect" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 focus:outline-none focus:border-teal-500 text-xs sm:text-sm appearance-none cursor-pointer">
                                 <option value="all">Semua Bahasa & Stack</option>
                                 <option value="C++">C++ (ESP32 & Arduino)</option>
                                 <option value="Python">Python</option>
                                 <option value="Shell">Shell / Bash</option>
-                                <option value="C">C (Low-Level)</option>
+                                <option value="C">C Bare-Metal</option>
                                 <option value="PowerShell">PowerShell</option>
                                 <option value="JavaScript">JavaScript</option>
+                                <option value="Docker">Docker Stack</option>
                             </select>
                             <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
                         </div>
                     </div>
 
-                    <!-- Sort Select Dropdown -->
+                    <!-- Sort Select -->
                     <div class="md:col-span-3">
                         <div class="relative">
-                            <select id="sortSelect" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-200 focus:outline-none focus:border-teal-500 text-sm appearance-none cursor-pointer">
-                                <option value="featured-first">Unggulan Pertama</option>
-                                <option value="name-asc">Nama (A - Z)</option>
-                                <option value="name-desc">Nama (Z - A)</option>
-                                <option value="recent">Terbaru Diperbarui</option>
+                            <select id="sortSelect" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 focus:outline-none focus:border-teal-500 text-xs sm:text-sm appearance-none cursor-pointer">
+                                <option value="featured-first">Proyek Pilihan Teratas</option>
+                                <option value="name-asc">Nama Repositori (A - Z)</option>
+                                <option value="name-desc">Nama Repositori (Z - A)</option>
+                                <option value="recent">Terakhir Diperbarui</option>
                             </select>
                             <i data-lucide="arrow-down-up" class="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
                         </div>
@@ -260,141 +303,159 @@
                 </div>
 
                 <!-- Category Filter Pills -->
-                <div class="mt-5 pt-5 border-t border-slate-800 flex flex-wrap gap-2 items-center" id="categoryPillsContainer">
-                    <!-- Populated dynamically by app.js -->
+                <div class="mt-4 pt-4 border-t border-slate-800 flex flex-wrap gap-2 items-center" id="categoryPillsContainer">
+                    <!-- Populated dynamically via app.js -->
                 </div>
             </div>
 
-            <!-- Active Results Bar -->
+            <!-- Results Counter Bar -->
             <div class="flex items-center justify-between mb-6 px-1">
-                <div class="text-sm text-slate-400">
+                <div class="text-xs sm:text-sm text-slate-400">
                     Menampilkan <strong id="resultsCount" class="text-teal-400 font-mono font-bold">172</strong> repositori
                 </div>
-                <div class="text-xs text-slate-500 font-mono">
-                    Klik kartu untuk instruksi clone & detail
+                <div class="text-xs text-slate-500 font-mono hidden sm:block">
+                    Tekan Detail untuk panduan kloning & deskripsi
                 </div>
             </div>
 
-            <!-- Repositories Card Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reposGrid">
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="reposGrid">
                 <!-- Dynamically rendered by app.js -->
             </div>
 
-            <!-- Pagination / Load More Controller -->
-            <div class="mt-12 text-center" id="loadMoreContainer">
-                <button id="loadMoreBtn" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-teal-400 font-semibold border border-slate-700 hover:border-teal-500 shadow-md hover:shadow-teal-500/10 transition-all">
-                    <i data-lucide="plus-circle" class="w-5 h-5"></i>
+            <!-- Pagination / Load More Button -->
+            <div class="mt-10 text-center" id="loadMoreContainer">
+                <button id="loadMoreBtn" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-teal-400 font-semibold border border-slate-700 hover:border-teal-500 shadow-md transition-all text-xs sm:text-sm">
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i>
                     <span>Tampilkan Lebih Banyak</span>
                 </button>
             </div>
         </section>
 
-        <!-- System Architecture & Protocols Section -->
-        <section id="architecture" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/80">
-            <div class="mb-12">
+        <!-- System Architecture & Engineering Standards -->
+        <section id="architecture" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+            <div class="mb-10">
                 <div class="inline-flex items-center gap-2 text-emerald-400 text-xs font-mono tracking-widest uppercase mb-2">
                     <i data-lucide="cpu" class="w-4 h-4"></i>
-                    <span>Kapabilitas & Standar Rekayasa</span>
+                    <span>Spesifikasi & Standar Rekayasa</span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Arsitektur, Protokol & Tech Stack</h2>
-                <p class="text-slate-400 mt-2 max-w-3xl text-sm sm:text-base">
-                    Standar industri yang diimplementasikan pada 172 repositori rekayasa hardware, firmware, driver, dan cloud.
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Arsitektur, Komponen & Protokol</h2>
+                <p class="text-slate-400 mt-2 max-w-3xl text-xs sm:text-sm">
+                    Ringkasan teknologi perangkat keras, bus komunikasi industri, driver kernel, dan platform server yang diimplementasikan pada portofolio.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
                 <div class="glass-card rounded-2xl p-6 border border-slate-800">
-                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 mb-4">
-                        <i data-lucide="microchip" class="w-6 h-6"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Mikrokontroler & SoC</h3>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Microcontrollers & Silicon</h3>
-                    <p class="text-xs text-slate-400 mb-4">Pengembangan firmware bare-metal dan multi-tasking RTOS berkecepatan tinggi.</p>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Pengembangan firmware bare-metal dan multi-threading RTOS berlatensi rendah.</p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">ESP32-S3</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">ESP32 Dual-Core</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">FreeRTOS</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">Arduino Uno / ATmega328P</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">RP2040 / RP2350</span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-3.5 h-3.5" alt="C++"> ESP32-S3 FreeRTOS
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" class="w-3.5 h-3.5" alt="Arduino"> ATmega328P
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 text-teal-300 text-xs font-mono border border-slate-800">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" class="w-3.5 h-3.5" alt="RPi"> RP2040 / RP2350
+                        </span>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="glass-card rounded-2xl p-6 border border-slate-800">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                        <i data-lucide="radio" class="w-6 h-6"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                            <i data-lucide="radio" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Protokol Komunikasi Industri</h3>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Industrial & Wireless Protocols</h3>
-                    <p class="text-xs text-slate-400 mb-4">Komunikasi deterministik untuk otomasi gedung dan sensor jarak jauh.</p>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Komunikasi data deterministik untuk otomasi gedung dan sensor jarak jauh.</p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">BACnet MS/TP</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">BACnet MS/TP RS-485</span>
                         <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">DALI-2 Lighting</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">Modbus RTU/TCP</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">LoRa 915/433MHz</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">Modbus RTU / TCP</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">LoRa 915MHz</span>
                         <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">MQTT & WebSocket</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 text-xs font-mono border border-slate-800">BLE 5.0 Beacon</span>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="glass-card rounded-2xl p-6 border border-slate-800">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4">
-                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                            <i data-lucide="zap" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Kendaraan Listrik & Avionika</h3>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">EV, Avionics & Motion Control</h3>
-                    <p class="text-xs text-slate-400 mb-4">Algoritma kendali motor sinkron dan sensor fusion navigasi.</p>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Algoritma kendali motor sinkron dan sensor fusion navigasi penerbangan.</p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">VCU Architecture</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">FOC Inverter</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">Smart BMS Integration</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">Madgwick AHRS</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">GRBL 3-Axis CNC</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">VCU ESP32-S3 Architecture</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">FOC Inverter & BMS</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">Madgwick AHRS IMU</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-amber-300 text-xs font-mono border border-slate-800">GRBL Motion Control</span>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
                 <div class="glass-card rounded-2xl p-6 border border-slate-800">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
-                        <i data-lucide="terminal" class="w-6 h-6"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+                            <i data-lucide="terminal" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Driver Windows & Low-Level</h3>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Drivers & Reverse Engineering</h3>
-                    <p class="text-xs text-slate-400 mb-4">Pengembangan driver kustom Windows x64, ADB suite, dan low-level hardware.</p>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Porting paket driver Windows x64, implementasi ADB bridge, dan analisis hardware.</p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">WinUSB INF / Driver</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">Realtek I2S Audio</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">Intel Gemini Lake INF</span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" class="w-3.5 h-3.5" alt="PowerShell"> WinUSB INF Package
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">Realtek I2S Audio Driver</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">Intel Gemini Lake Chipset</span>
                         <span class="px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">Synopsys DWC2 Exploit</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-purple-300 text-xs font-mono border border-slate-800">ADB USB Bridge</span>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
                 <div class="glass-card rounded-2xl p-6 border border-slate-800">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
-                        <i data-lucide="server" class="w-6 h-6"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Cloud, DevOps & ERP Stack</h3>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Cloud, DevOps & Self-Hosted</h3>
-                    <p class="text-xs text-slate-400 mb-4">Stack server produksi teroptimasi dengan isolasi kontainer Docker.</p>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Infrastruktur server mandiri berbasis kontainer Docker terisolasi dan aman.</p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">Docker Compose</span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-3.5 h-3.5" alt="Docker"> Docker Compose
+                        </span>
                         <span class="px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">Frappe & ERPNext v15</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">Ollama Local LLM</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">n8n AI Workflow</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">CasaOS & NAS</span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" class="w-3.5 h-3.5" alt="Nginx"> Nginx SSL Reverse Proxy
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 text-xs font-mono border border-slate-800">Ollama LLM & n8n</span>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
                 <div class="glass-card rounded-2xl p-6 border border-slate-800">
-                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-4">
-                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                            <i data-lucide="file-check" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Kepatuhan Regulasi Indonesia</h3>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Compliance & Regulasi Bisnis</h3>
-                    <p class="text-xs text-slate-400 mb-4">Integrasi langsung ke standar perpajakan dan ketenagakerjaan Republik Indonesia.</p>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Integrasi modul sistem informasi dengan regulasi perpajakan dan ketenagakerjaan RI.</p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-rose-300 text-xs font-mono border border-slate-800">BPJS Ketenagakerjaan</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-rose-300 text-xs font-mono border border-slate-800">BPJS Ketenagakerjaan API</span>
                         <span class="px-2.5 py-1 rounded-md bg-slate-900 text-rose-300 text-xs font-mono border border-slate-800">PPh 21 TER 2024</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-rose-300 text-xs font-mono border border-slate-800">e-Faktur DJP</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-900 text-rose-300 text-xs font-mono border border-slate-800">e-Faktur DJP XML</span>
                         <span class="px-2.5 py-1 rounded-md bg-slate-900 text-rose-300 text-xs font-mono border border-slate-800">QRIS Standar ASPI</span>
                         <span class="px-2.5 py-1 rounded-md bg-slate-900 text-rose-300 text-xs font-mono border border-slate-800">UU PDP No. 27/2022</span>
                     </div>
@@ -402,25 +463,25 @@
             </div>
         </section>
 
-        <!-- About & Contact Section -->
-        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/80">
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
             <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800 text-center max-w-4xl mx-auto relative overflow-hidden">
-                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-teal-500 to-cyan-400 p-[2px] mx-auto mb-6 shadow-xl shadow-teal-500/20">
-                    <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-3xl font-extrabold text-teal-400">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-400 p-[2px] mx-auto mb-5 shadow-xl shadow-teal-500/20">
+                    <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center font-mono font-bold text-2xl text-teal-400">
                         MF
                     </div>
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Kolaborasi Rekayasa & Solusi Industri</h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
-                    Tertarik mengembangkan perangkat IoT kustom, sistem telemetri kendaraan listrik, instrumentasi laboratorium, atau otomasi industri untuk perusahaan Anda?
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Konsultasi Rekayasa & Kerjasama Teknis</h2>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 max-w-2xl mx-auto">
+                    Kebutuhan pengembangan sistem IoT industri, telemetri kendaraan listrik, instrumentasi laboratorium, maupun implementasi server enterprise untuk operasional perusahaan Anda.
                 </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="mailto:muhammadfikripersonalmail@gmail.com" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-teal-500/20 transition-all">
+                <div class="flex flex-wrap justify-center gap-3.5">
+                    <a href="mailto:muhammadfikripersonalmail@gmail.com" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md transition-all">
                         <i data-lucide="mail" class="w-4 h-4"></i>
                         <span>muhammadfikripersonalmail@gmail.com</span>
                     </a>
-                    <a href="https://github.com/muhammadfikri-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium border border-slate-700 text-sm sm:text-base transition-all">
-                        <i data-lucide="github" class="w-4 h-4"></i>
+                    <a href="https://github.com/muhammadfikri-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium border border-slate-700 text-xs sm:text-sm transition-all">
+                        <i class="devicon-github-original text-base"></i>
                         <span>Kunjungi Profil GitHub</span>
                     </a>
                 </div>
@@ -430,10 +491,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/80 bg-slate-950/80 py-10 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 font-mono">
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 font-mono">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-                © 2026 <strong>Muhammad Fikri</strong> • PT. Laksana Digital Industri • Pelaihari, Indonesia.
+                © 2026 <strong>Muhammad Fikri</strong> — PT. Laksana Digital Industri • Pelaihari, Indonesia.
             </div>
             <div class="flex items-center gap-4 text-slate-400">
                 <a href="#top" class="hover:text-teal-400 transition-colors">Kembali ke Atas ↑</a>
@@ -443,9 +504,9 @@
         </div>
     </footer>
 
-    <!-- Detail Modal -->
+    <!-- Interactive Modal -->
     <div id="repoModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-        <div class="glass-panel w-full max-w-2xl rounded-2xl border border-slate-700 p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        <div class="glass-panel w-full max-w-2xl rounded-2xl border border-slate-700 p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             <button id="closeModalBtn" class="absolute right-5 top-5 p-2 rounded-xl text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 transition-colors">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
@@ -457,9 +518,9 @@
 
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 hidden toast-animate">
-        <div class="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-slate-900 border border-teal-500/50 text-white shadow-2xl shadow-teal-500/20 text-sm font-medium">
-            <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-400"></i>
-            <span id="toastMessage">Teks berhasil disalin!</span>
+        <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 border border-teal-500 text-white shadow-xl text-xs font-medium">
+            <i data-lucide="check" class="w-4 h-4 text-teal-400"></i>
+            <span id="toastMessage">Teks berhasil disalin.</span>
         </div>
     </div>
 
